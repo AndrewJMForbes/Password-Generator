@@ -22,8 +22,8 @@ function writePassword() {
  const arrayUpper = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
  const arrayNumber = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
   var arrayAll = arrayUpper.concat(arrayLower, arraySymbol, arrayNumber);
-  var result = (Math.random() + 1).toString(36) .substring(15);
-  for (var i = 1; i <= passwordLength; i++) {
+  
+  for (var i = 0; i <= passwordLength; i++) {
     var randomNumber = Math.floor(Math.random() * chars.length);
     password += chars.substring(randomNumber, randomNumber);
   }
@@ -43,30 +43,38 @@ function writePassword() {
   }
    console.log(userEntry);
   
-   var upper = window.prompt("Do you want uppercase letters?")
-  if ((upper !== "Y")||(upper !== "N")) {
-    
+   var uppercase = window.confirm("Do you want uppercase letters? Y/N")
+   if (uppercase){
+    userEntry = userEntry.concat(arrayUpper);
+    console.log(uppercase);
+   }
+ 
+  var lowercase = window.confirm("Do you want lowercase letters? Y/N")
+  if (lowercase) {
+    userEntry = userEntry.concat(arrayLower);
+    console.log(lowercase);
   }
+  var numbers = window.confirm("Do you want to add numbers? Y/N")
+  if (numbers) {
+    userEntry = userEntry.concat(arrayNumber);
+   console.log(numbers); 
+  }
+  var symbols = window.confirm("Do you want to add symbols? Y/N")
+  if (symbols) {
+    userEntry = userEntry.concat(arraySymbol);
 
+
+    console.log(symbols);
+    
+  }
   
-  var lower = window.prompt("Do you want lowercase letters?")
-  if ((lower !== "Y")||(lower !== "N")) {
-    
-  }
-  var numbers = window.prompt("Do you want to add numbers?")
-  if ((numbers !== "Y")||(numbers !== "N")) {
-    
-  }
-  var symbols = window.prompt("Do you want to add symbols?")
-  if ((symbols !== "Y")||(symbols !== "N")) {
-    
-  }
   console.log(result);
   onclick =option();
 
   function option() {
-    var choose =confirm('Are you sure?');
+    var choose =confirm('Are you sure about your choices?');
     if (choose == false) {
+      userEntry = userEntry.concat(arrayAll);
       event.preventDefault;
     }
     
@@ -77,8 +85,19 @@ function writePassword() {
   
 function generatePassword() {
   var passwordText = document.querySelector("#password");
-
+  const arrayLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+  const arraySymbol = ["! @ # $ % ^ & * ( )"];
+  const arrayUpper = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+  const arrayNumber = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+   var arrayAll = arrayUpper.concat(arrayLower, arraySymbol, arrayNumber);
+  var result = (Math.random() * 2).toString(36) .substring(10);
+  for (var i = 0; i <= passwordLength; i++) {
+    var randomNumber = Math.floor(Math.random() * chars.length);
+    password += chars.substring(randomNumber, randomNumber);
+  }
   
+  
+  passwordText.value = (result);
 }
 
 
