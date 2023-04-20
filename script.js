@@ -3,9 +3,6 @@ var userEntry = "";
 var compEntry = "";
 var randomPass = "";
 var displayMessage = "";
-var minlength = 8;
-var maxlength = 16;
-
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()"
@@ -17,11 +14,11 @@ function writePassword() {
   var password = "";
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
- const arrayLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
- const arraySymbol = ["! @ # $ % ^ & * ( )"];
- const arrayUpper = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
- const arrayNumber = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-  var arrayAll = arrayUpper.concat(arrayLower, arraySymbol, arrayNumber);
+ const lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+ const symbol = ["! @ # $ % ^ & * ( )"];
+ const upper = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+ const number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  var combinedChars = upper.concat(lower, symbol, number);
   
   for (var i = 0; i <= passwordLength; i++) {
     var randomNumber = Math.floor(Math.random() * chars.length);
@@ -43,32 +40,23 @@ function writePassword() {
   }
    console.log(userEntry);
   
-   var uppercase = window.confirm("Do you want uppercase letters? Y/N")
-   if (uppercase){
-    userEntry = userEntry.concat(arrayUpper);
-    console.log(uppercase);
-   }
+   var uppercase = window.confirm("Do you want uppercase letters? Click OK for Yes and cancel for NO")
+   if (uppercase = true)
+
+
+  var lowercase = window.confirm("Do you want lowercase letters? Click OK for Yes and cancel for NO")
  
-  var lowercase = window.confirm("Do you want lowercase letters? Y/N")
-  if (lowercase) {
-    userEntry = userEntry.concat(arrayLower);
-    console.log(lowercase);
-  }
-  var numbers = window.confirm("Do you want to add numbers? Y/N")
-  if (numbers) {
-    userEntry = userEntry.concat(arrayNumber);
-   console.log(numbers); 
-  }
-  var symbols = window.confirm("Do you want to add symbols? Y/N")
-  if (symbols) {
-    userEntry = userEntry.concat(arraySymbol);
+  var numbers = window.confirm("Do you want to add numbers? Click OK for Yes and cancel for NO")
+ 
+  var symbols = window.confirm("Do you want to add symbols? Click OK for Yes and cancel for NO")
+  
 
 
     console.log(symbols);
     
   }
   
-  console.log(result);
+  // console.log(result);
   onclick =option();
 
   function option() {
@@ -80,8 +68,8 @@ function writePassword() {
     
   }
  
-  passwordText.value = (result);
-}
+  // passwordText.value = (result);
+
   
 function generatePassword() {
   var passwordText = document.querySelector("#password");
