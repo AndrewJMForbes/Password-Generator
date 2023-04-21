@@ -60,3 +60,6 @@ With these steps you should now be able to clone a repository, edit the contents
 ![symbol](https://user-images.githubusercontent.com/124540000/233536915-50f23f74-ff03-449b-b4fd-d02939208318.png) "Password symbol confirm window"
 
 ![number](https://user-images.githubusercontent.com/124540000/233537199-ea5e544e-84bf-4194-bae5-c358ed23b3fe.png) "Password number confirm window"
+
+https://github.com/Forbes85/Password-Generator -- GitHub Repository
+https://forbes85.github.io/Password-Generator/ -- Deployed site

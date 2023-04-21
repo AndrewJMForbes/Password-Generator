@@ -61,41 +61,43 @@ function generatePassword() {
   if (symbol === true) {
     eligibleCharacters = eligibleCharacters.concat(symbol);
   }
+  if (uppercase){
+    
+  }
   //todo check for at least one option
 
-  var password = document.getElementById('password');
+  var password = "";
 
   for (var i = 0; i <= passLength; i++) {
     var randomNumber = Math.floor(Math.random() * eligibleCharacters.length);
-    password += eligibleCharacters.length(randomNumber + 1);
+    password += eligibleCharacters(randomNumber + 1);
   }
-  document.getElementById('password').value = password;
 // return the password that is generated
 
 }
 
-function toDelete() {
-  password = [];
-  var passwordText = document.querySelector("#password");
-  const lower = "abcdefghijklmnopqrstuvwxyz";
-  const symbol = "!@#$%^&*() ";
-  const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  const number = '0123456789';
-  var result = upper.concat(lower, symbol, number);
+// function toDelete() {
+//   password = [];
+//   var passwordText = document.querySelector("#password");
+//   const lower = "abcdefghijklmnopqrstuvwxyz";
+//   const symbol = "!@#$%^&*() ";
+//   const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//   const number = '0123456789';
+//   var result = upper.concat(lower, symbol, number);
 
-  for (var i = 0; i <= passwordLength; i++) {
-    var randomNumber = Math.floor(Math.random() * chars.length);
-    password += chars.substring(randomNumber, randomNumber);
-  }
+//   for (var i = 0; i <= passwordLength; i++) {
+//     var randomNumber = Math.floor(Math.random() * chars.length);
+//     password += chars.substring(randomNumber, randomNumber);
+//   }
 
-  passwordText.value = password;
-}
+//   passwordText.value = password;
+// }
 
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  passwordText.value = eligibleCharacters;
 }
 
 // Add event listener to generate button
