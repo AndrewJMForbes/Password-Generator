@@ -63,3 +63,10 @@ With these steps you should now be able to clone a repository, edit the contents
 
 https://github.com/Forbes85/Password-Generator -- GitHub Repository
 https://forbes85.github.io/Password-Generator/ -- Deployed site
+
+## Code sources
+source code js syntax help from Bootcamp TA's Brian Baker and MJ Shelton
+https://www.w3schools.com/
+https://developer.mozilla.org/
+https://Youtube.com/
+https://stackoverflow.com/

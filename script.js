@@ -7,7 +7,7 @@ var chars =
 
 // Write password to the #password input
 function generatePassword() {
-  var eligibleCharacters = [];
+  var eligibleCharacters = '';
   const lower = "abcdefghijklmnopqrstuvwxyz";
   const symbol = "!@#$%^&*() ";
   const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -16,7 +16,7 @@ function generatePassword() {
 
   var passLength = window.prompt("Choose your password length");
 
-  // passLength = Number(passLength)
+  passLength = Number(passLength)
   
   if (passLength < 8) {
     alert("Password must be at least 8 characters!");
@@ -61,10 +61,8 @@ function generatePassword() {
   if (symbol === true) {
     eligibleCharacters = eligibleCharacters.concat(symbol);
   }
-  if (uppercase){
-    
-  }
-  //todo check for at least one option
+  
+  
 
   var password = "";
 
