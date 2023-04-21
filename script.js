@@ -16,7 +16,7 @@ function generatePassword() {
 
   var passLength = window.prompt("Choose your password length");
 
-  passLength = Number(passLength)
+  // passLength = Number(passLength)
   
   if (passLength < 8) {
     alert("Password must be at least 8 characters!");
@@ -39,6 +39,9 @@ function generatePassword() {
   );
   if (uppercase === true) {
     eligibleCharacters = eligibleCharacters.concat(upper);
+    console.log('User Chooses Yes');
+  } else {
+    console.log('User Chooses No');
   }
 
   var lowercase = window.confirm(
@@ -46,21 +49,30 @@ function generatePassword() {
   );
   if (lowercase === true) {
     eligibleCharacters = eligibleCharacters.concat(lower);
-  }
+    console.log('User Chooses Yes');
+  } else {
+    console.log('User Chooses No');
+  };
 
   var numbers = window.confirm(
     "Do you want to add numbers? Click OK for Yes and cancel for NO"
   );
   if (numbers === true) {
     eligibleCharacters = eligibleCharacters.concat(number);
-  }
+    console.log('User Chooses Yes');
+  } else {
+    console.log('User Chooses No');
+  };
 
   var symbols = window.confirm(
     "Do you want to add symbols? Click OK for Yes and cancel for NO"
   );
   if (symbol === true) {
     eligibleCharacters = eligibleCharacters.concat(symbol);
-  }
+    console.log('User Chooses Yes');
+  } else {
+    console.log('User Chooses No');
+  };
   
   
 
@@ -68,7 +80,7 @@ function generatePassword() {
 
   for (var i = 0; i <= passLength; i++) {
     var randomNumber = Math.floor(Math.random() * eligibleCharacters.length);
-    password += eligibleCharacters(randomNumber + 1);
+    password += eligibleCharacters.substring(randomNumber + 1);
   }
 // return the password that is generated
 
@@ -94,8 +106,13 @@ function generatePassword() {
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
-  passwordText.value = eligibleCharacters;
+  const = eligibleCharactersLength = eligibleCharacters.length;
+  for (var i = 0; i <= passLength; i++) {
+    var randomNumber = Math.floor(Math.random() * eligibleCharacters.length);
+    password += eligibleCharacters.charAt(Math.random() * eligibleCharacters.length);
+  }
+  const result = Math.random().toString(36).substring(2,7)
+  passwordText.value = (result);
 }
 
 // Add event listener to generate button
